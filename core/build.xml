@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- WARNING: Eclipse auto-generated file.
+              Any modifications will be overwritten.
+              To include a user specific buildfile here, simply create one in the same
+              directory with the processing instruction <?eclipse.ant.import?>
+              as the first entry and export the buildfile again. --><project basedir="." default="build" name="core">
+    <property environment="env"/>
+    <property name="ECLIPSE_HOME" value="../../../../../Applications/Eclipse.app/Contents/Eclipse/"/>
+    <property name="debuglevel" value="source,lines,vars"/>
+    <property name="target" value="1.8"/>
+    <property name="source" value="1.8"/>
+    <path id="Maven Dependencies.libraryclasspath">
+        <pathelement location="../../../.m2/repository/javax/mail/mail/1.4.7/mail-1.4.7.jar"/>
+        <pathelement location="../../../.m2/repository/org/apache/xmlgraphics/batik-awt-util/1.9.1/batik-awt-util-1.9.1.jar"/>
+        <pathelement location="../../../.m2/repository/org/apache/xmlgraphics/batik-dom/1.9.1/batik-dom-1.9.1.jar"/>
+        <pathelement location="../../../.m2/repository/org/apache/xmlgraphics/batik-svggen/1.9.1/batik-svggen-1.9.1.jar"/>
+        <pathelement location="../../../.m2/repository/commons-beanutils/commons-beanutils/1.9.3/commons-beanutils-1.9.3.jar"/>
+        <pathelement location="../../../.m2/repository/commons-codec/commons-codec/1.9/commons-codec-1.9.jar"/>
+        <pathelement location="../../../.m2/repository/commons-collections/commons-collections/3.2.2/commons-collections-3.2.2.jar"/>
+        <pathelement location="../../../.m2/repository/commons-dbcp/commons-dbcp/1.4/commons-dbcp-1.4.jar"/>
+        <pathelement location="../../../.m2/repository/commons-pool/commons-pool/1.5.7/commons-pool-1.5.7.jar"/>
+        <pathelement location="../../../.m2/repository/commons-io/commons-io/2.1/commons-io-2.1.jar"/>
+        <pathelement location="../../../.m2/repository/commons-lang/commons-lang/2.6/commons-lang-2.6.jar"/>
+        <pathelement location="../../../.m2/repository/commons-logging/commons-logging/1.1.3/commons-logging-1.1.3.jar"/>
+        <pathelement location="../../../.m2/repository/org/apache/httpcomponents/httpclient/4.5.3/httpclient-4.5.3.jar"/>
+        <pathelement location="../../../.m2/repository/org/apache/httpcomponents/httpcore/4.4.6/httpcore-4.4.6.jar"/>
+        <pathelement location="../../../.m2/repository/dom4j/dom4j/1.6.1/dom4j-1.6.1.jar"/>
+        <pathelement location="../../../.m2/repository/jaxen/jaxen/1.1/jaxen-1.1.jar"/>
+        <pathelement location="../../../.m2/repository/jfree/jcommon/1.0.14/jcommon-1.0.14.jar"/>
+        <pathelement location="../../../.m2/repository/jfree/jfreechart/1.0.13/jfreechart-1.0.13.jar"/>
+        <pathelement location="../../../.m2/repository/org/springframework/spring-core/4.3.2.RELEASE/spring-core-4.3.2.RELEASE.jar"/>
+        <pathelement location="../../../.m2/repository/org/springframework/spring-context/4.3.2.RELEASE/spring-context-4.3.2.RELEASE.jar"/>
+        <pathelement location="../../../.m2/repository/org/springframework/spring-tx/4.3.2.RELEASE/spring-tx-4.3.2.RELEASE.jar"/>
+        <pathelement location="../../../.m2/repository/org/springframework/spring-jdbc/4.3.2.RELEASE/spring-jdbc-4.3.2.RELEASE.jar"/>
+        <pathelement location="../../../.m2/repository/org/springframework/spring-aop/4.3.2.RELEASE/spring-aop-4.3.2.RELEASE.jar"/>
+        <pathelement location="../../../.m2/repository/org/springframework/spring-beans/4.3.2.RELEASE/spring-beans-4.3.2.RELEASE.jar"/>
+        <pathelement location="../../../.m2/repository/org/springframework/spring-expression/4.3.2.RELEASE/spring-expression-4.3.2.RELEASE.jar"/>
+        <pathelement location="../../../.m2/repository/org/springframework/security/spring-security-core/4.1.3.RELEASE/spring-security-core-4.1.3.RELEASE.jar"/>
+        <pathelement location="../../../.m2/repository/org/springframework/security/spring-security-acl/4.1.3.RELEASE/spring-security-acl-4.1.3.RELEASE.jar"/>
+        <pathelement location="../../../.m2/repository/org/springframework/security/spring-security-ldap/4.1.3.RELEASE/spring-security-ldap-4.1.3.RELEASE.jar"/>
+        <pathelement location="../../../.m2/repository/org/springframework/ldap/spring-ldap-core/2.1.0.RELEASE/spring-ldap-core-2.1.0.RELEASE.jar"/>
+        <pathelement location="../../../.m2/repository/org/slf4j/slf4j-api/1.7.7/slf4j-api-1.7.7.jar"/>
+        <pathelement location="../../../.m2/repository/org/slf4j/slf4j-log4j12/1.7.7/slf4j-log4j12-1.7.7.jar"/>
+        <pathelement location="../../../.m2/repository/com/google/guava/guava/17.0/guava-17.0.jar"/>
+        <pathelement location="../../../.m2/repository/org/apache/felix/org.apache.felix.main/4.2.1/org.apache.felix.main-4.2.1.jar"/>
+        <pathelement location="../../../.m2/repository/org/apache/felix/org.apache.felix.framework/4.2.1/org.apache.felix.framework-4.2.1.jar"/>
+        <pathelement location="../../../.m2/repository/org/hibernate/hibernate-core/3.6.9.Final/hibernate-core-3.6.9.Final.jar"/>
+        <pathelement location="../../../.m2/repository/org/hibernate/hibernate-commons-annotations/3.2.0.Final/hibernate-commons-annotations-3.2.0.Final.jar"/>
+        <pathelement location="../../../.m2/repository/org/hibernate/javax/persistence/hibernate-jpa-2.0-api/1.0.1.Final/hibernate-jpa-2.0-api-1.0.1.Final.jar"/>
+        <pathelement location="../../../.m2/repository/org/antlr/antlr-complete/3.5.2/antlr-complete-3.5.2.jar"/>
+        <pathelement location="../../../.m2/repository/asm/asm/3.1/asm-3.1.jar"/>
+        <pathelement location="../../../.m2/repository/asm/asm-attrs/2.2.3/asm-attrs-2.2.3.jar"/>
+        <pathelement location="../../../.m2/repository/cglib/cglib-nodep/2.2/cglib-nodep-2.2.jar"/>
+        <pathelement location="../../../.m2/repository/javax/transaction/jta/1.1/jta-1.1.jar"/>
+        <pathelement location="../../../.m2/repository/net/sf/ehcache/ehcache-core/2.5.1/ehcache-core-2.5.1.jar"/>
+        <pathelement location="../../../.m2/repository/rhino/js/1.7R1/js-1.7R1.jar"/>
+        <pathelement location="../../../.m2/repository/org/netbeans/jmi/200507110943/jmi-200507110943.jar"/>
+        <pathelement location="../../../.m2/repository/org/netbeans/mdrapi/200507110943/mdrapi-200507110943.jar"/>
+        <pathelement location="../../../../../api"/>
+        <pathelement location="../../../.m2/repository/org/pentaho/commons-database-model/8.2.0.0-SNAPSHOT/commons-database-model-8.2.0.0-SNAPSHOT.jar"/>
+        <pathelement location="../../../.m2/repository/pentaho/pentaho-service-coordinator/8.2.0.0-SNAPSHOT/pentaho-service-coordinator-8.2.0.0-SNAPSHOT.jar"/>
+        <pathelement location="../../../.m2/repository/pentaho/pentaho-connections/8.2.0.0-SNAPSHOT/pentaho-connections-8.2.0.0-SNAPSHOT.jar"/>
+        <pathelement location="../../../.m2/repository/org/pentaho/actionsequence-dom/8.2.0.0-SNAPSHOT/actionsequence-dom-8.2.0.0-SNAPSHOT.jar"/>
+        <pathelement location="../../../.m2/repository/org/pentaho/pentaho-metadata/8.2.0.0-SNAPSHOT/pentaho-metadata-8.2.0.0-SNAPSHOT.jar"/>
+        <pathelement location="../../../.m2/repository/joda-time/joda-time/1.6/joda-time-1.6.jar"/>
+        <pathelement location="../../../.m2/repository/commons-math/commons-math/1.1/commons-math-1.1.jar"/>
+        <pathelement location="../../../.m2/repository/com/thoughtworks/xstream/xstream/1.4.10/xstream-1.4.10.jar"/>
+        <pathelement location="../../../.m2/repository/org/netbeans/mof/200507110943/mof-200507110943.jar"/>
+        <pathelement location="../../../.m2/repository/org/netbeans/nbmdr/200507110943-custom/nbmdr-200507110943-custom.jar"/>
+        <pathelement location="../../../.m2/repository/org/pentaho/reporting/library/libformula/8.2.0.0-SNAPSHOT/libformula-8.2.0.0-SNAPSHOT.jar"/>
+        <pathelement location="../../../.m2/repository/org/pentaho/reporting/library/libbase/8.2.0.0-SNAPSHOT/libbase-8.2.0.0-SNAPSHOT.jar"/>
+        <pathelement location="../../../.m2/repository/pentaho/pentaho-versionchecker/8.2.0.0-SNAPSHOT/pentaho-versionchecker-8.2.0.0-SNAPSHOT.jar"/>
+        <pathelement location="../../../.m2/repository/org/pentaho/commons-xul-core/8.2.0.0-SNAPSHOT/commons-xul-core-8.2.0.0-SNAPSHOT.jar"/>
+        <pathelement location="../../../.m2/repository/pentaho-kettle/kettle-engine/8.2.0.0-SNAPSHOT/kettle-engine-8.2.0.0-SNAPSHOT.jar"/>
+        <pathelement location="../../../.m2/repository/pentaho-kettle/kettle-core/8.2.0.0-SNAPSHOT/kettle-core-8.2.0.0-SNAPSHOT.jar"/>
+        <pathelement location="../../../.m2/repository/pentaho/metastore/8.2.0.0-SNAPSHOT/metastore-8.2.0.0-SNAPSHOT.jar"/>
+        <pathelement location="../../../.m2/repository/org/owasp/encoder/encoder/1.2/encoder-1.2.jar"/>
+        <pathelement location="../../../.m2/repository/org/apache/xmlgraphics/batik-bridge/1.9.1/batik-bridge-1.9.1.jar"/>
+        <pathelement location="../../../.m2/repository/org/apache/xmlgraphics/batik-css/1.9.1/batik-css-1.9.1.jar"/>
+        <pathelement location="../../../.m2/repository/org/apache/xmlgraphics/batik-gvt/1.9.1/batik-gvt-1.9.1.jar"/>
+        <pathelement location="../../../.m2/repository/org/apache/xmlgraphics/batik-svg-dom/1.9.1/batik-svg-dom-1.9.1.jar"/>
+        <pathelement location="../../../.m2/repository/org/apache/xmlgraphics/batik-transcoder/1.9.1/batik-transcoder-1.9.1.jar"/>
+        <pathelement location="../../../.m2/repository/org/apache/xmlgraphics/batik-codec/1.9.1/batik-codec-1.9.1.jar"/>
+        <pathelement location="../../../.m2/repository/org/apache/xmlgraphics/batik-util/1.9.1/batik-util-1.9.1.jar"/>
+        <pathelement location="../../../.m2/repository/org/apache/xmlgraphics/batik-ext/1.9.1/batik-ext-1.9.1.jar"/>
+        <pathelement location="../../../.m2/repository/org/apache/xmlgraphics/batik-xml/1.9.1/batik-xml-1.9.1.jar"/>
+        <pathelement location="../../../.m2/repository/org/apache/xmlgraphics/batik-anim/1.9.1/batik-anim-1.9.1.jar"/>
+        <pathelement location="../../../.m2/repository/org/apache/xmlgraphics/batik-parser/1.9.1/batik-parser-1.9.1.jar"/>
+        <pathelement location="../../../.m2/repository/org/apache/xmlgraphics/batik-script/1.9.1/batik-script-1.9.1.jar"/>
+        <pathelement location="../../../.m2/repository/org/apache/xmlgraphics/batik-constants/1.9.1/batik-constants-1.9.1.jar"/>
+        <pathelement location="../../../.m2/repository/org/apache/xmlgraphics/batik-i18n/1.9.1/batik-i18n-1.9.1.jar"/>
+        <pathelement location="../../../.m2/repository/xml-apis/xml-apis-ext/1.3.04/xml-apis-ext-1.3.04.jar"/>
+        <pathelement location="../../../.m2/repository/org/apache/commons/commons-vfs2/2.2/commons-vfs2-2.2.jar"/>
+        <pathelement location="../../../.m2/repository/org/apache/commons/commons-compress/1.4.1/commons-compress-1.4.1.jar"/>
+        <pathelement location="../../../.m2/repository/org/eclipse/jetty/jetty-util/8.1.15.v20140411/jetty-util-8.1.15.v20140411.jar"/>
+        <pathelement location="../../../.m2/repository/jug-lgpl/jug-lgpl/2.0.0/jug-lgpl-2.0.0.jar"/>
+        <pathelement location="../../../.m2/repository/com/jcraft/jsch/0.1.54/jsch-0.1.54.jar"/>
+        <pathelement location="../../../.m2/repository/com/jcraft/jzlib/1.0.7/jzlib-1.0.7.jar"/>
+        <pathelement location="../../../.m2/repository/ognl/ognl/2.6.9/ognl-2.6.9.jar"/>
+        <pathelement location="../../../.m2/repository/net/sf/scannotation/scannotation/1.0.2/scannotation-1.0.2.jar"/>
+        <pathelement location="../../../.m2/repository/com/wcohen/com.wcohen.secondstring/0.1/com.wcohen.secondstring-0.1.jar"/>
+        <pathelement location="../../../.m2/repository/org/javassist/javassist/3.20.0-GA/javassist-3.20.0-GA.jar"/>
+        <pathelement location="../../../.m2/repository/org/samba/jcifs/jcifs/1.3.3/jcifs-1.3.3.jar"/>
+        <pathelement location="../../../.m2/repository/org/apache/karaf/org.apache.karaf.main/3.0.3/org.apache.karaf.main-3.0.3.jar"/>
+        <pathelement location="../../../.m2/repository/pentaho/simple-jndi/1.0.0/simple-jndi-1.0.0.jar"/>
+        <pathelement location="../../../.m2/repository/pentaho/pentaho-cwm/1.5.4/pentaho-cwm-1.5.4.jar"/>
+        <pathelement location="../../../.m2/repository/org/netbeans/jmiutils/200507110943/jmiutils-200507110943.jar"/>
+        <pathelement location="../../../.m2/repository/org/netbeans/openide-util/200507110943/openide-util-200507110943.jar"/>
+        <pathelement location="../../../.m2/repository/junit/junit/4.12/junit-4.12.jar"/>
+        <pathelement location="../../../.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar"/>
+        <pathelement location="../../../.m2/repository/org/hamcrest/hamcrest-library/1.3/hamcrest-library-1.3.jar"/>
+        <pathelement location="../../../.m2/repository/com/google/code/bean-matchers/bean-matchers/0.9/bean-matchers-0.9.jar"/>
+        <pathelement location="../../../.m2/repository/org/jmock/jmock-junit4/2.5.1/jmock-junit4-2.5.1.jar"/>
+        <pathelement location="../../../.m2/repository/org/jmock/jmock/2.5.1/jmock-2.5.1.jar"/>
+        <pathelement location="../../../.m2/repository/junit/junit-dep/4.4/junit-dep-4.4.jar"/>
+        <pathelement location="../../../.m2/repository/org/jmock/jmock-legacy/2.5.1/jmock-legacy-2.5.1.jar"/>
+        <pathelement location="../../../.m2/repository/org/objenesis/objenesis/1.0/objenesis-1.0.jar"/>
+        <pathelement location="../../../.m2/repository/log4j/log4j/1.2.17/log4j-1.2.17.jar"/>
+        <pathelement location="../../../.m2/repository/org/springframework/spring-mock/2.0.8/spring-mock-2.0.8.jar"/>
+        <pathelement location="../../../.m2/repository/org/codehaus/jettison/jettison/1.2/jettison-1.2.jar"/>
+        <pathelement location="../../../.m2/repository/stax/stax-api/1.0.1/stax-api-1.0.1.jar"/>
+        <pathelement location="../../../.m2/repository/org/mockito/mockito-all/1.10.19/mockito-all-1.10.19.jar"/>
+        <pathelement location="../../../.m2/repository/org/mockito/mockito-core/1.10.19/mockito-core-1.10.19.jar"/>
+        <pathelement location="../../../.m2/repository/org/powermock/powermock-module-junit4/1.6.3/powermock-module-junit4-1.6.3.jar"/>
+        <pathelement location="../../../.m2/repository/org/powermock/powermock-module-junit4-common/1.6.3/powermock-module-junit4-common-1.6.3.jar"/>
+        <pathelement location="../../../.m2/repository/org/powermock/powermock-core/1.6.3/powermock-core-1.6.3.jar"/>
+        <pathelement location="../../../.m2/repository/org/powermock/powermock-reflect/1.6.3/powermock-reflect-1.6.3.jar"/>
+        <pathelement location="../../../.m2/repository/org/powermock/powermock-api-mockito/1.6.3/powermock-api-mockito-1.6.3.jar"/>
+        <pathelement location="../../../.m2/repository/org/powermock/powermock-api-support/1.6.3/powermock-api-support-1.6.3.jar"/>
+        <pathelement location="../../../.m2/repository/org/jmockit/jmockit/1.8/jmockit-1.8.jar"/>
+    </path>
+    <path id="core.classpath">
+        <pathelement location="target/classes"/>
+        <pathelement location="target/test-classes"/>
+        <path refid="Maven Dependencies.libraryclasspath"/>
+    </path>
+    <target name="init">
+        <mkdir dir="target/classes"/>
+        <mkdir dir="target/test-classes"/>
+        <copy includeemptydirs="false" todir="target/classes">
+            <fileset dir="src/main/java">
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+        <copy includeemptydirs="false" todir="target/classes">
+            <fileset dir="src/main/resources">
+                <exclude name="**/*.java"/>
+                <exclude name="**"/>
+            </fileset>
+        </copy>
+        <copy includeemptydirs="false" todir="target/test-classes">
+            <fileset dir="src/test/java">
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+        <copy includeemptydirs="false" todir="target/test-classes">
+            <fileset dir="src/test/resources">
+                <exclude name="**/*.java"/>
+                <exclude name="**"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="clean">
+        <delete dir="target/classes"/>
+        <delete dir="target/test-classes"/>
+    </target>
+    <target depends="clean" name="cleanall"/>
+    <target depends="build-subprojects,build-project" name="build"/>
+    <target name="build-subprojects"/>
+    <target depends="init" name="build-project">
+        <echo message="${ant.project.name}: ${ant.file}"/>
+        <javac debug="true" debuglevel="${debuglevel}" destdir="target/classes" includeantruntime="false" source="${source}" target="${target}">
+            <src path="src/main/java"/>
+            <src path="src/main/resources"/>
+            <exclude name="**"/>
+            <classpath refid="core.classpath"/>
+        </javac>
+        <javac debug="true" debuglevel="${debuglevel}" destdir="target/test-classes" includeantruntime="false" source="${source}" target="${target}">
+            <src path="src/test/java"/>
+            <src path="src/test/resources"/>
+            <exclude name="**"/>
+            <classpath refid="core.classpath"/>
+        </javac>
+    </target>
+    <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
+    <target description="copy Eclipse compiler jars to ant lib directory" name="init-eclipse-compiler">
+        <copy todir="${ant.library.dir}">
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </copy>
+        <unzip dest="${ant.library.dir}">
+            <patternset includes="jdtCompilerAdapter.jar"/>
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </unzip>
+    </target>
+    <target description="compile project with Eclipse compiler" name="build-eclipse-compiler">
+        <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
+        <antcall target="build"/>
+    </target>
+</project>

@@ -46,9 +46,8 @@ public class PentahoRequestContextHolder {
   // ======================================================================================
 
   private static final Log logger = LogFactory.getLog( PentahoRequestContextHolder.class );
-
+  
   public static final String MODE_INHERITABLETHREADLOCAL = "MODE_INHERITABLETHREADLOCAL"; //$NON-NLS-1$
-
   public static final String MODE_GLOBAL = "MODE_GLOBAL"; //$NON-NLS-1$
 
   public static final String SYSTEM_PROPERTY = "pentaho.requestContextHolder.strategy"; //$NON-NLS-1$
@@ -94,6 +93,7 @@ public class PentahoRequestContextHolder {
     } else {
       if ( PentahoSystem.getInitializedOK() ) {
         return new BasePentahoRequestContext( PentahoSystem.getApplicationContext().getFullyQualifiedServerURL() );
+        
       } else {
         try{
           logger.debug( "Something went wrong. Trying to proceed. System is in status " + PentahoSystem.getInitializedStatus() );

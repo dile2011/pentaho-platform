@@ -139,7 +139,6 @@ public class SetCharacterEncodingFilter implements Filter {
   }
 
   // ------------------------------------------------------ Protected Methods
-
   /**
    * Select an appropriate character encoding to be used, based on the characteristics of the current request and/or
    * filter initialization parameters. If no character encoding should be set, return <code>null</code>.
@@ -151,7 +150,7 @@ public class SetCharacterEncodingFilter implements Filter {
    *          The servlet request we are processing
    */
   protected String selectEncoding( final ServletRequest request ) {
-
+	
     return ( this.encoding );
 
   }

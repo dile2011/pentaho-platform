@@ -7,9 +7,7 @@
     <artifactId>pentaho-platform-ce-parent</artifactId>
     <version>8.0.0.0-28</version>
   </parent>
-  <groupId>pentaho</groupId>
   <artifactId>pentaho-platform-repository</artifactId>
-  <version>8.0.0.0-28</version>
   <properties>
     <license.header.file>${basedir}/../license/templates/LGPL-2.1.txt</license.header.file>
     <maven-failsafe-plugin.reuseForks>false</maven-failsafe-plugin.reuseForks>

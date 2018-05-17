@@ -83,8 +83,10 @@ public class PentahoRequestContextFilter implements Filter {
       if ( requestContext == null ) {
         initContext( httpRequest );
       }
+      
       PentahoRequestContextHolder.setRequestContext( requestContext );
       chain.doFilter( httpRequest, httpResponse );
+      
     } finally {
       PentahoRequestContextHolder.removeRequestContext();
       httpRequest.removeAttribute( FILTER_APPLIED );

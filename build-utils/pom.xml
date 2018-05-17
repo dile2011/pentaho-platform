@@ -8,7 +8,6 @@
     <version>8.0.0.0-28</version>
   </parent>
   <artifactId>pentaho-platform-build-utils</artifactId>
-  <version>8.0.0.0-28</version>
   <properties>
     <mockito-all.version>1.9.5</mockito-all.version>
     <license.header.definition.file>${basedir}/../license/styles/javadoc_style_license_header.xml</license.header.definition.file>
@@ -104,8 +103,9 @@
         </configuration>
       </plugin>
       <plugin>
-        <artifactId>maven-javadoc-plugin</artifactId>
-        <version>${maven-javadoc-plugin.version}</version>
+      <groupId>org.apache.maven.plugins</groupId>
+		<artifactId>maven-javadoc-plugin</artifactId>
+        	
         <executions>
           <execution>
             <phase>compile</phase>
