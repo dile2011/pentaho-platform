@@ -82,7 +82,7 @@ public class HsqldbStartupListener implements ServletContextListener {
 
     starterBean.setDatabases( getDatabases( ctx ) );
 
-    String sampleDataAllowPortFailover = ctx.getInitParameter( "hsqldb-allow-port-failover" ); //$NON-NLS-1$
+    String sampleDataAllowPortFailover = ctx.getInitParameter( "hsqldb-allow-port-	" ); //$NON-NLS-1$
     if ( ( sampleDataAllowPortFailover != null ) && ( sampleDataAllowPortFailover.equalsIgnoreCase( "true" ) ) ) { //$NON-NLS-1$
       logger.debug( String.format( "Allow Port Failover specified" ) ); //$NON-NLS-1$
       starterBean.setAllowPortFailover( true );

@@ -3,32 +3,87 @@
 
 <web-app>
 
+	<!--String param_name=getServletContext().getInitParamter("solution-path"); -->
 	<context-param>
 		<param-name>solution-path</param-name>
-		<param-value></param-value>
+		<param-value>/Users/dile/git/pentaho-platform/assemblies/pentaho-solutions/src/main/resources/pentaho-solutions</param-value>
 	</context-param>
 
 	<context-param>
 		<param-name>contextClass</param-name>
 		<param-value>org.pentaho.platform.web.http.context.PentahoSolutionSpringApplicationContext</param-value>
 	</context-param>
-
+	
+	<!-- Spring ApplicationContext 容器加载Bean -->
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
-		<!-- This file is relative to the "system" folder within your pentaho solutions 
-			folder. -->
-		<!-- Instead of adding files here, add them as imports to pentaho-spring-beans.xml. -->
 		<param-value>pentaho-spring-beans.xml</param-value>
 	</context-param>
 
-	<!-- [BEGIN HSQLDB DATABASES] -->
+	<!-- 数据库配置文件 -->
 	<context-param>
 		<param-name>hsqldb-databases</param-name>
 		<param-value>sampledata@../../data/hsqldb/sampledata,hibernate@../../data/hsqldb/hibernate,quartz@../../data/hsqldb/quartz</param-value>
 	</context-param>
-	<!-- [END HSQLDB DATABASES] -->
 
-	<!-- insert additional context-params -->
+	<!-- sets System Location properties used by the Spring context -->
+	<listener>
+		<listener-class>org.pentaho.platform.web.http.context.SpringEnvironmentSetupListener</listener-class>
+	</listener>
+
+	<listener>
+		<listener-class>org.apache.felix.http.proxy.ProxyListener</listener-class>
+	</listener>
+
+	<!-- enables session and request scoped object creation in Spring -->
+	<!-- 为bean设置作用域session、request、global session -->
+	<listener>
+		<listener-class>org.springframework.web.context.request.RequestContextListener</listener-class>
+	</listener>
+
+	<!-- [BEGIN HSQLDB STARTER] -->
+	<!-- 启动HSQLDB数据库 -->
+	<listener>
+		<listener-class>org.pentaho.platform.web.http.context.HsqldbStartupListener</listener-class>
+	</listener>
+
+	<listener>
+		<listener-class>org.pentaho.platform.web.http.session.PentahoHttpSessionListener</listener-class>
+	</listener>
+
+	<!-- 启动Web容器，自动装配ApplicationContext的配置信息。因为它实现了ServletContextListener这个接口，
+	在web.xml配置这个监听器，启动容器时，就会默认执行它实现的方法。 
+	-->
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+	<listener>
+		<listener-class>org.pentaho.platform.web.http.context.SolutionContextListener</listener-class>
+	</listener>
+	
+	<listener>
+		<listener-class>org.springframework.security.web.session.HttpSessionEventPublisher</listener-class>
+	</listener>
+
+	<listener>
+		<listener-class>org.pentaho.platform.web.http.context.PentahoCacheContextListener</listener-class>
+	</listener>
+
+	<listener>
+		<listener-class>org.pentaho.platform.web.http.session.PentahoCacheSessionListener</listener-class>
+	</listener>
+
+	<listener>
+		<listener-class>net.sf.ehcache.constructs.web.ShutdownListener</listener-class>
+	</listener>
+	<!-- insert additional listeners -->
+
+	<!-- Last listener: PentahoSystemReadyListener, performs notification to 
+		plugins that the system has been started and is ready, spring has been initialized 
+		and all plugins have been loaded -->
+	<listener>
+		<listener-class>org.pentaho.platform.web.http.context.PentahoSystemReadyListener</listener-class>
+	</listener>
 
 	<filter> <!-- This must be the first filter listed in the web.xml -->
 		<filter-name>Set Character Encoding Filter</filter-name>
@@ -98,7 +153,6 @@
 	</filter>
 
 	<!-- insert additional filters -->
-
 	<filter-mapping>
 		<filter-name>Pentaho Path Decoding Filter</filter-name>
 		<url-pattern>/*</url-pattern>
@@ -146,66 +200,6 @@
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
 	<!-- insert additional filter-mappings -->
-
-
-	<!-- sets System properties used by the Spring context -->
-	<listener>
-		<listener-class>org.pentaho.platform.web.http.context.SpringEnvironmentSetupListener</listener-class>
-	</listener>
-
-	<listener>
-		<listener-class>org.apache.felix.http.proxy.ProxyListener</listener-class>
-	</listener>
-
-	<!-- enables session and request scoped object creation in Spring -->
-	<listener>
-		<listener-class>org.springframework.web.context.request.RequestContextListener</listener-class>
-	</listener>
-
-	<!-- [BEGIN HSQLDB STARTER] -->
-	<listener>
-		<listener-class>org.pentaho.platform.web.http.context.HsqldbStartupListener</listener-class>
-	</listener>
-	<!-- [END HSQLDB STARTER] -->
-
-	<listener>
-		<listener-class>org.pentaho.platform.web.http.session.PentahoHttpSessionListener</listener-class>
-	</listener>
-
-	<!-- NEXT TWO LISTENERS ARE ORDER DEPENDENT -->
-	<listener>
-		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
-	</listener>
-
-	<listener>
-		<listener-class>org.pentaho.platform.web.http.context.SolutionContextListener</listener-class>
-	</listener>
-	<!-- END OF ORDER DEPENDENCE -->
-
-	<listener>
-		<listener-class>org.springframework.security.web.session.HttpSessionEventPublisher</listener-class>
-	</listener>
-
-	<listener>
-		<listener-class>org.pentaho.platform.web.http.context.PentahoCacheContextListener</listener-class>
-	</listener>
-
-	<listener>
-		<listener-class>org.pentaho.platform.web.http.session.PentahoCacheSessionListener</listener-class>
-	</listener>
-
-	<listener>
-		<listener-class>net.sf.ehcache.constructs.web.ShutdownListener</listener-class>
-	</listener>
-
-	<!-- insert additional listeners -->
-
-	<!-- Last listener: PentahoSystemReadyListener, performs notification to 
-		plugins that the system has been started and is ready, spring has been initialized 
-		and all plugins have been loaded -->
-	<listener>
-		<listener-class>org.pentaho.platform.web.http.context.PentahoSystemReadyListener</listener-class>
-	</listener>
 
 	<servlet>
 		<servlet-name>ViewAction</servlet-name>
