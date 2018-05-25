@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<features xmlns="http://karaf.apache.org/xmlns/features/v1.2.1" name="pentaho-webpackage-8.0.0.0-28">
+    <repository>mvn:org.pentaho.webpackage/pentaho-webpackage-archive-deployer/8.0.0.0-28/xml/features</repository>
+    <feature name="pentaho-webpackage" version="8.0.0.0-28" description="pentaho-webpackage">
+        <details>Parent project for Pentaho OSGI Bundles</details>
+        <feature>http-whiteboard</feature>
+        <feature version="8.0.0.0-28">pentaho-webpackage-archive-deployer</feature>
+        <bundle>mvn:org.pentaho.webpackage/http-extender-impl/8.0.0.0-28</bundle>
+        <bundle>mvn:org.pentaho.webpackage/core-api/8.0.0.0-28</bundle>
+        <bundle>mvn:com.googlecode.json-simple/json-simple/1.1.1</bundle>
+    </feature>
+</features>

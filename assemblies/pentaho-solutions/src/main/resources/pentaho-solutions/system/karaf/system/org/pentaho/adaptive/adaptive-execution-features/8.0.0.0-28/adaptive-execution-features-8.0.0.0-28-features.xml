@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<features xmlns="http://karaf.apache.org/xmlns/features/v1.2.1" name="adaptive-execution-features">
+    <feature name="pdi-spark" version="1.0">
+        <feature>pdi-spark-base</feature>
+        <bundle>mvn:org.pentaho.adaptive/pdi-spark-app-bundle/8.0.0.0-28</bundle>
+    </feature>
+    <feature name="pdi-spark-executor" version="1.0">
+        <feature>pdi-spark-base</feature>
+    </feature>
+    <feature name="pdi-spark-base" version="1.0">
+        <config name="pentaho.pdi.spark" append="false">
+      configuredEngine=spark
+    </config>
+        <bundle>mvn:pentaho/pentaho-blueprint-collection-utils/8.0.0.0-28</bundle>
+        <bundle>mvn:pentaho/pentaho-metastore-locator-api/8.0.0.0-28</bundle>
+        <bundle>mvn:pentaho/pentaho-big-data-api-jaas/8.0.0.0-28</bundle>
+        <bundle>mvn:pentaho/pentaho-big-data-api-initializer/8.0.0.0-28</bundle>
+        <bundle>mvn:pentaho/pentaho-big-data-api-cluster-service-locator/8.0.0.0-28</bundle>
+        <bundle>mvn:commons-beanutils/commons-beanutils/1.9.3</bundle>
+        <bundle>mvn:pentaho/pentaho-big-data-api-cluster/8.0.0.0-28</bundle>
+        <bundle>mvn:pentaho/pentaho-big-data-impl-cluster/8.0.0.0-28</bundle>
+        <bundle>mvn:pentaho/pentaho-big-data-kettle-plugins-kafka/8.0.0.0-28</bundle>
+        <bundle>mvn:pentaho/pentaho-big-data-kettle-plugins-formats/8.0.0.0-28</bundle>
+        <bundle>mvn:pentaho/pentaho-big-data-kettle-plugins-formats-meta/8.0.0.0-28</bundle>
+        <bundle>mvn:pentaho/pentaho-big-data-api-format/8.0.0.0-28</bundle>
+        <bundle>mvn:pentaho/pentaho-big-data-api-runtimeTest/8.0.0.0-28</bundle>
+        <bundle>mvn:org.pentaho.adaptive/pdi-spark-engine-operations/8.0.0.0-28</bundle>
+        <bundle>mvn:commons-codec/commons-codec/1.10</bundle>
+        <bundle>mvn:org.pentaho/pdi-engine-serializers/8.0.0.0-28</bundle>
+        <bundle>mvn:pentaho/pentaho-object-tunnel/8.0.0.0-28</bundle>
+        <bundle>mvn:com.fasterxml.jackson.core/jackson-core/2.5.4</bundle>
+        <bundle>mvn:com.fasterxml.jackson.core/jackson-annotations/2.5.3</bundle>
+        <bundle>mvn:com.fasterxml.jackson.core/jackson-databind/2.5.3</bundle>
+    </feature>
+    <feature name="pdi-remote-client" version="1.0">
+        <bundle>mvn:org.pentaho.adaptive/remote-client/8.0.0.0-28</bundle>
+        <bundle>mvn:commons-codec/commons-codec/1.10</bundle>
+        <bundle>mvn:io.reactivex.rxjava2/rxjava/2.0.4</bundle>
+        <bundle>mvn:pentaho/pentaho-object-tunnel/8.0.0.0-28</bundle>
+        <bundle>mvn:org.pentaho/pdi-engine-serializers/8.0.0.0-28</bundle>
+        <bundle>mvn:com.fasterxml.jackson.core/jackson-core/2.5.4</bundle>
+        <bundle>mvn:com.fasterxml.jackson.core/jackson-annotations/2.5.3</bundle>
+        <bundle>mvn:com.fasterxml.jackson.core/jackson-databind/2.5.3</bundle>
+    </feature>
+</features>

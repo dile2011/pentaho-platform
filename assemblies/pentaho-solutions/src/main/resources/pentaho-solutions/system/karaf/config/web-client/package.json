@@ -1,0 +1,9 @@
+{
+  "name": "pentaho/config/deploy",
+  "version": "8.0.0.0-28",
+  "config": {
+    "pentaho/instanceInfo": {
+      "pentaho/config/deploy_8.0.0.0-28/config": {"type": "pentaho.config.spec.IRuleSet"}
+    }
+  }
+}
