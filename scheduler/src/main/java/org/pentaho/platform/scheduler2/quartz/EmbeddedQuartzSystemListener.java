@@ -113,6 +113,7 @@ public class EmbeddedQuartzSystemListener implements IPentahoSystemListener {
 								}
 								scheduler.start();
 						}
+						
 				} catch (IOException ex) {
 						result = false;
 						logger.error(Messages.getInstance().getErrorString("EmbeddedQuartzSystemListener.ERROR_0004_LOAD_PROPERTIES_FROM_CLASSPATH"), ex); //$NON-NLS-1$

@@ -6,7 +6,7 @@
 	<!--String param_name=getServletContext().getInitParamter("solution-path"); -->
 	<context-param>
 		<param-name>solution-path</param-name>
-		<param-value>/Users/dile/git/pentaho-platform/assemblies/pentaho-solutions/src/main/resources/pentaho-solutions</param-value>
+		<param-value>../../pentaho-solutions</param-value>
 	</context-param>
 
 	<context-param>
