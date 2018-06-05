@@ -161,8 +161,8 @@
                   <artifactId>pentaho-solutions</artifactId>
                   <type>zip</type>
                   <outputDirectory>${project.build.directory}</outputDirectory>
-                  <includes>**/dialects/hsqldb/applicationContext-spring-security-hibernate.properties,
-                    **/dialects/hsqldb/audit_sql.xml</includes>
+                  <includes>**/dialects/mysql/applicationContext-spring-security-hibernate.properties,
+                    **/dialects/mysql/audit_sql.xml</includes>
                 </artifactItem>
               </artifactItems>
             </configuration>

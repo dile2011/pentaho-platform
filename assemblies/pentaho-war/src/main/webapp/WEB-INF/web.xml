@@ -21,10 +21,12 @@
 	</context-param>
 
 	<!-- 数据库配置文件 -->
+	<!-- 
 	<context-param>
 		<param-name>hsqldb-databases</param-name>
 		<param-value>sampledata@../../data/hsqldb/sampledata,hibernate@../../data/hsqldb/hibernate,quartz@../../data/hsqldb/quartz</param-value>
 	</context-param>
+	 -->
 
 	<!-- sets System Location properties used by the Spring context -->
 	<listener>
@@ -43,9 +45,11 @@
 
 	<!-- [BEGIN HSQLDB STARTER] -->
 	<!-- 启动HSQLDB数据库 -->
+	<!-- 
 	<listener>
 		<listener-class>org.pentaho.platform.web.http.context.HsqldbStartupListener</listener-class>
 	</listener>
+	 -->
 
 	<listener>
 		<listener-class>org.pentaho.platform.web.http.session.PentahoHttpSessionListener</listener-class>

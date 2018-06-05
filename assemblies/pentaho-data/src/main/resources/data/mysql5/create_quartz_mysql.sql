@@ -7,7 +7,7 @@
 
 CREATE DATABASE IF NOT EXISTS `quartz` DEFAULT CHARACTER SET latin1;
 
-grant all on quartz.* to 'pentaho_user'@'localhost' identified by 'password';
+CREATE USER 'pentaho_user'@'%' IDENTIFIED BY 'password';
 
 USE `quartz`;
 
